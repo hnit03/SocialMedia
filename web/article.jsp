@@ -20,17 +20,18 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/color.css">
         <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 
     </head>
     <body>
-        <!--<div class="se-pre-con"></div>-->
         <div class="theme-layout">
             <!-- topbar -->
             <jsp:include page="topbar.jsp"/>
 
-            <!-- right sidebar user chat -->
             <!-- left sidebar menu -->
             <jsp:include page="left_sidebar.jsp"/>
+
+
             <section>
                 <div class="gap2 gray-bg">
                     <div class="container-fluid">
@@ -655,7 +656,7 @@
                 </div>	
             </section>
         </div>
-       
+        
         <script src="js/main.min.js"></script>
         <script src="js/script.js"></script>
         <script src="js/map-init.js"></script>

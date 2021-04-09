@@ -14,6 +14,9 @@
             <span class="mh-text">
                 <a href="newsfeed.html" title=""><img src="images/logo2.png" alt=""></a>
             </span>
+            <span class="mh-btns-right">
+                <a class="fa fa-sliders" href="#shoppingbag"></a>
+            </span>
         </div>
         <div class="mh-head second">
             <form class="mh-form">
@@ -30,6 +33,27 @@
                 <li><span>Account Setting</span>
                 </li>
             </ul>
+        </nav>
+        <nav id="shoppingbag">
+            <div>
+                <div class="">
+                    <div class="setting-row">
+                        <span><a href="#" title=""><i class="ti-user"></i> view profile</a></span>
+                    </div>
+                    <div class="setting-row">
+                        <span><a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a></span>
+                    </div>
+                    <div class="setting-row">
+                        <span><a href="#" title=""><i class="ti-target"></i>activity log</a></span>
+                    </div>
+                    <div class="setting-row">
+                        <span><a href="#" title=""><i class="ti-settings"></i>account setting</a></span>
+                    </div>
+                    <div class="setting-row">
+                        <span><a href="logout" title="Logout"><i class="ti-power-off"></i>log out</a></span>
+                    </div>
+                </div>
+            </div>
         </nav>
     </div>
     <div class="fixed-sidebar left" style="width: 15rem">
@@ -48,6 +72,26 @@
                 <li><a href="notifications.html" title="Notification" data-toggle="tooltip" data-placement="right"><i class="ti-bookmark-alt"></i></a></li>
             </ul>
         </div>
+    </div>
+    <div class="side-panel">
+
+        <div class="setting-row">
+            <span><a href="#" title=""><i class="ti-user"></i> view profile</a></span>
+        </div>
+        <div class="setting-row">
+            <span><a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a></span>
+        </div>
+        <div class="setting-row">
+            <span><a href="#" title=""><i class="ti-target"></i>activity log</a></span>
+        </div>
+        <div class="setting-row">
+            <span><a href="#" title=""><i class="ti-settings"></i>account setting</a></span>
+        </div>
+        <div class="setting-row">
+            <span><a href="logout" title="Logout"><i class="ti-power-off"></i>log out</a></span>
+        </div>
+
+
     </div>
 </body>
 

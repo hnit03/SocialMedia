@@ -6,3 +6,4 @@ verify=verify.jsp
 verified=VerifyServlet
 verify_again=VerifyAgainServlet
 article=article.jsp
+logout=LogoutServlet
