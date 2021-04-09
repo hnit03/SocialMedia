@@ -20,7 +20,7 @@ public class DBHelper {
     public static Connection makeConnection() throws NamingException, SQLException {
         Context context = new InitialContext();
         Context tomcatContext = (Context) context.lookup("java:comp/env");
-        DataSource ds = (DataSource) tomcatContext.lookup("CarRent");
+        DataSource ds = (DataSource) tomcatContext.lookup("SocialMedia");
         Connection con =ds.getConnection();
         return  con;
     }
