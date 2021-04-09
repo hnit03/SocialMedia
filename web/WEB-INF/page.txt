@@ -4,3 +4,4 @@ signup=RegisterServlet
 signin=index.jsp
 verify=verify.jsp
 verified=VerifyServlet
+verify_again=VerifyAgainServlet
