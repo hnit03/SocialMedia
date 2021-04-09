@@ -21,9 +21,17 @@
         <link rel="stylesheet" href="css/responsive.css">
 
         <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script> 
+
+        <script>
+            function loginSubmit() {
+                document.getElementById("login").submit();
+            }
+            function registerSubmit() {
+                document.getElementById("register").submit();
+            }
+        </script>
     </head>
     <body>
-        <!--<div class="se-pre-con"></div>-->
         <div class="theme-layout">
             <div class="container-fluid pdng0">
                 <div class="row merged">
@@ -62,58 +70,56 @@
                                     </div>
                                     <a title="" class="forgot-pwd">Forgot Password?</a>
                                     <div class="submit-btns">
-                                        <button class="mtr-btn signin" type="button" onclick="submit()"><span>Login</span></button>
+                                        <button class="mtr-btn signin" type="button" onclick="loginSubmit()"><span>Login</span></button>
                                         <button class="mtr-btn signup" type="button"><span>Register</span></button>
                                     </div>
-                                    <script>
-                                        function submit(){
-                                            document.getElementById("login").submit();
-                                        }
-                                    </script>
                                 </form>
                             </div>
                             <div class="log-reg-area reg">
                                 <h2 class="log-title">Register</h2>
                                 <p>
-                                    Don’t use Winku Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
+                                    Don’t use Soca Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
                                 </p>
-                                <form method="post">
+                                <form method="post" action="signup" id="register">
                                     <div class="form-group">	
-                                        <input type="text" required="required"/>
+                                        <input type="text" 
+                                               required="required" 
+                                               name="name" 
+                                               value="${param.name}"      
+                                               maxlength="50"/>
                                         <label class="control-label" for="input">First & Last Name</label><i class="mtrl-select"></i>
                                     </div>
                                     <div class="form-group">	
-                                        <input type="text" required="required"/>
-                                        <label class="control-label" for="input">User Name</label><i class="mtrl-select"></i>
+                                        <input type="email" 
+                                               required="required" 
+                                               name="email" value="${param.email}"
+                                               maxlength="50"/>
+                                        <label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
                                     </div>
                                     <div class="form-group">	
-                                        <input type="password" required="required"/>
+                                        <input type="password" 
+                                               required="required" 
+                                               name="password" value="${param.password}"
+                                               minlength="6"
+                                               maxlength="32"/>
                                         <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
                                     </div>
-                                    <div class="form-radio">
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="radio" checked="checked"/><i class="check-box"></i>Male
-                                            </label>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="radio"/><i class="check-box"></i>Female
-                                            </label>
-                                        </div>
-                                    </div>
                                     <div class="form-group">	
-                                        <input type="text" required="required"/>
-                                        <label class="control-label" for="input"><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c29010d05002c">[email&#160;protected]</a></label><i class="mtrl-select"></i>
+                                        <input type="password" 
+                                               required="required" 
+                                               name="confirm" value="${param.confirm}"
+                                               minlength="6"
+                                               maxlength="32"/>
+                                        <label class="control-label" for="input">Confirm password</label><i class="mtrl-select"></i>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" checked="checked"/><i class="check-box"></i>Accept Terms & Conditions ?
+                                            <input type="checkbox" checked="checked" required="required"/><i class="check-box"></i>Accept Terms & Conditions ?
                                         </label>
                                     </div>
                                     <a href="#" title="" class="already-have">Already have an account</a>
                                     <div class="submit-btns">
-                                        <button class="mtr-btn signup" type="button"><span>Register</span></button>
+                                        <button class="mtr-btn signup" type="button" onclick="registerSubmit()"><span>Register</span></button>
                                     </div>
                                 </form>
                             </div>

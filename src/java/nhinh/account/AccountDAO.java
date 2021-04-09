@@ -94,4 +94,47 @@ public class AccountDAO implements Serializable {
         }
         return dTO;
     }
+    
+    public boolean createNewAccount(AccountDTO dto) throws SQLException, NamingException {
+        try {
+            con = DBHelper.makeConnection();
+            if (con != null) {
+                String sql = "insert into Account(email,password,roleID,fullname,statusID) "
+                        + "values(?,?,?,?,?)";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, dto.getEmail());
+                ps.setString(2, dto.getPassword());
+                ps.setString(3, dto.getRoleDTO().getRoleID());
+                ps.setString(4, dto.getName());
+                ps.setString(5, dto.getStatusDTO().getStatusID());
+                int success = ps.executeUpdate();
+                if (success == 1) {
+                    return true;
+                }
+            }
+        } finally {
+            closeConnection();
+        }
+        return false;
+    }
+
+    public boolean checkEmailDup(String email) throws SQLException, NamingException {
+        try {
+            con = DBHelper.makeConnection();
+            if (con != null) {
+                String sql = "select email "
+                        + "from Account "
+                        + "where email = ?";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, email);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    return true;
+                }
+            }
+        } finally {
+            closeConnection();
+        }
+        return false;
+    }
 }

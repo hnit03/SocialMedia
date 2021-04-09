@@ -59,7 +59,7 @@ public class RoleDAO implements Serializable {
         return dto;
     }
     
-    public RoleDTO getRoleCustomer() throws SQLException, NamingException {
+    public RoleDTO getRoleMember() throws SQLException, NamingException {
         RoleDTO dto = null;
         try {
 
@@ -67,7 +67,7 @@ public class RoleDAO implements Serializable {
             if (con != null) {
                 String sql = "select roleID,roleName "
                         + "from Role "
-                        + "where roleName = 'Customer'";
+                        + "where roleName = 'Member'";
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
                 if (rs.next()) {

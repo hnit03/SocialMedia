@@ -1,2 +1,4 @@
  =index.jsp
 login=LoginServlet
+signup=RegisterServlet
+signin=index.jsp
