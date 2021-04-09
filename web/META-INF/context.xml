@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/SocialMedia"/>
+<Context path="/SocialMedia">
+    <Resource username="sa" 
+              url="jdbc:sqlserver://localhost:1433;databaseName=SocialMedia" 
+              type="javax.sql.DataSource" password="hoangnhi" name="SocialMedia" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" auth="Container"/>
+</Context>
