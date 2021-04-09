@@ -40,7 +40,7 @@ public class PageListener implements ServletContextListener {
                 String value = stk.nextToken();
                 indexPage.put(key.trim(), value.trim());
             }
-            sce.getServletContext().setAttribute("CUSTOMER", indexPage);
+            sce.getServletContext().setAttribute("PAGE", indexPage);
         
         } catch (IOException ex) {
             
