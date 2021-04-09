@@ -48,7 +48,7 @@
                                 <p>
                                     Don’t use Soca Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
                                 </p>
-                                <form method="post" action="">
+                                <form method="post" action="login" id="login">
                                     <div class="form-group">	
                                         <input type="text" id="input" name="email" value="${param.email}" required="required"/>
                                         <label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
@@ -62,9 +62,14 @@
                                     </div>
                                     <a title="" class="forgot-pwd">Forgot Password?</a>
                                     <div class="submit-btns">
-                                        <button class="mtr-btn signin" type="button"><span>Login</span></button>
+                                        <button class="mtr-btn signin" type="button" onclick="submit()"><span>Login</span></button>
                                         <button class="mtr-btn signup" type="button"><span>Register</span></button>
                                     </div>
+                                    <script>
+                                        function submit(){
+                                            document.getElementById("login").submit();
+                                        }
+                                    </script>
                                 </form>
                             </div>
                             <div class="log-reg-area reg">

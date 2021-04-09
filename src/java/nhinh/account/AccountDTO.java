@@ -6,6 +6,8 @@
 package nhinh.account;
 
 import java.io.Serializable;
+import nhinh.role.RoleDTO;
+import nhinh.status.StatusDTO;
 
 /**
  *
@@ -16,19 +18,18 @@ public class AccountDTO implements Serializable {
     private String email;
     private String password;
     private String name;
-    private String role;
-    private String status;
+    private RoleDTO roleDTO;
+    private StatusDTO statusDTO;
 
     public AccountDTO() {
     }
 
-    
-    public AccountDTO(String email, String password, String name, String role, String status) {
+    public AccountDTO(String email, String password, String name, RoleDTO roleDTO, StatusDTO statusDTO) {
         this.email = email;
         this.password = password;
         this.name = name;
-        this.role = role;
-        this.status = status;
+        this.roleDTO = roleDTO;
+        this.statusDTO = statusDTO;
     }
 
     /**
@@ -74,31 +75,33 @@ public class AccountDTO implements Serializable {
     }
 
     /**
-     * @return the role
+     * @return the roleDTO
      */
-    public String getRole() {
-        return role;
+    public RoleDTO getRoleDTO() {
+        return roleDTO;
     }
 
     /**
-     * @param role the role to set
+     * @param roleDTO the roleDTO to set
      */
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoleDTO(RoleDTO roleDTO) {
+        this.roleDTO = roleDTO;
     }
 
     /**
-     * @return the status
+     * @return the statusDTO
      */
-    public String getStatus() {
-        return status;
+    public StatusDTO getStatusDTO() {
+        return statusDTO;
     }
 
     /**
-     * @param status the status to set
+     * @param statusDTO the statusDTO to set
      */
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatusDTO(StatusDTO statusDTO) {
+        this.statusDTO = statusDTO;
     }
+
+    
     
 }

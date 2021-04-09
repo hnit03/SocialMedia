@@ -11,6 +11,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.naming.NamingException;
+import nhinh.role.RoleDAO;
+import nhinh.role.RoleDTO;
+import nhinh.status.StatusDAO;
+import nhinh.status.StatusDTO;
 import nhinh.utils.DBHelper;
 
 /**
@@ -63,12 +67,14 @@ public class AccountDAO implements Serializable {
     }
 
     public AccountDTO getAccountDTO(String email) throws SQLException, NamingException {
+        RoleDAO rdao = new RoleDAO();
+        StatusDAO sdao = new StatusDAO();
         AccountDTO dTO = null;
         try {
             con = DBHelper.makeConnection();
             if (con != null) {
-                String sql = "select password,phone,fullname,roleID,statusID,createDate,address "
-                        + "from Registration "
+                String sql = "select password,fullname,roleID,statusID "
+                        + "from Account "
                         + "where email = ? ";
                 ps = con.prepareStatement(sql);
                 ps.setString(1, email);
@@ -76,9 +82,11 @@ public class AccountDAO implements Serializable {
                 if (rs.next()) {
                     String pass = rs.getString("password");
                     String roleID = rs.getString("roleID");
+                    RoleDTO rdto = rdao.getRoleDTO(roleID);
                     String statusID = rs.getString("statusID");
+                    StatusDTO sdto = sdao.getStatusDTO(statusID);
                     String fullname = rs.getString("fullname");
-                    dTO = new AccountDTO(email, pass, fullname, roleID, statusID);
+                    dTO = new AccountDTO(email, pass, fullname, rdto, sdto);
                 }
             }
         } finally {
