@@ -137,4 +137,24 @@ public class AccountDAO implements Serializable {
         }
         return false;
     }
+    
+     public boolean updateStatusActive(String username) throws SQLException, NamingException {
+        try {
+            con = DBHelper.makeConnection();
+            if (con != null) {
+                String sql = "update Account "
+                        + "set statusID = (select statusID from Status where statusName = 'Active') "
+                        + "where email = ?";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, username);
+                int success = ps.executeUpdate();
+                if (success == 1) {
+                    return true;
+                }
+            }
+        } finally {
+            closeConnection();
+        }
+        return false;
+    }
 }

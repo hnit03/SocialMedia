@@ -73,6 +73,8 @@ public class RegisterServlet extends HttpServlet {
                 }
                 if (err) {
                     request.setAttribute("ERROR", errors);
+                    RequestDispatcher rd = request.getRequestDispatcher(url);
+                    rd.forward(request, response);
                 } else if (!err) {
                     SHA256 sha = new SHA256();
                     String pass = sha.bytesToHex(password);
@@ -87,12 +89,12 @@ public class RegisterServlet extends HttpServlet {
                     boolean success = dao.createNewAccount(dto);
                     if (success) {
                         HttpSession codeSession = request.getSession(true);
-                        codeSession.setMaxInactiveInterval(5*60);
+                        codeSession.setMaxInactiveInterval(5 * 60);
                         codeSession.setAttribute("CODE_VERIFY", code);
                         codeSession.setAttribute("EMAIL", email);
                         url = "verify";
                     }
-
+                    response.sendRedirect(url);
                 }
             }
         } catch (SQLException ex) {
@@ -106,8 +108,6 @@ public class RegisterServlet extends HttpServlet {
         } catch (MessagingException ex) {
             Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            RequestDispatcher rd = request.getRequestDispatcher(url);
-            rd.forward(request, response);
             out.close();
         }
     }
