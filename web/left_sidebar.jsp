@@ -61,7 +61,7 @@
             <ul class="left-menu">
                 <li>
                     <figure>
-                        <img src="images/resources/side-friend3.jpg" alt=""> Hoàng Nhi
+                        <img src="images/resources/side-friend3.jpg" alt="" style="border-radius: 100%"> Hoàng Nhi
                     </figure>
                 </li>
                 <li>
