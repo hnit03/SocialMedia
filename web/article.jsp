@@ -40,49 +40,10 @@
                                 <div class="row merged20" id="page-contents">
                                     <div class="col-lg-3"></div>
                                     <div class="col-lg-8">
-                                        <div class="central-meta">
-                                            <div class="new-postbox">
-                                                <figure>
-                                                    <img src="images/resources/admin2.jpg" alt="">
-                                                </figure>
-                                                <div class="newpst-input">
-                                                    <form method="post">
-                                                        <textarea rows="2" placeholder="write something"></textarea>
-                                                        <div class="attachments">
-                                                            <ul>
-                                                                <li>
-                                                                    <i class="fa fa-music"></i>
-                                                                    <label class="fileContainer">
-                                                                        <input type="file">
-                                                                    </label>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-image"></i>
-                                                                    <label class="fileContainer">
-                                                                        <input type="file">
-                                                                    </label>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-video-camera"></i>
-                                                                    <label class="fileContainer">
-                                                                        <input type="file">
-                                                                    </label>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-camera"></i>
-                                                                    <label class="fileContainer">
-                                                                        <input type="file">
-                                                                    </label>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="submit">Post</button>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div><!-- add post new box -->
+                                        
+                                        <!-- add post new box -->
+                                        <jsp:include page="newpost.jsp"/>
+                                        
                                         <div class="loadMore">
                                             <div class="central-meta item">
                                                 <div class="user-post">

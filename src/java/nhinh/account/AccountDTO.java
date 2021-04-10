@@ -20,16 +20,18 @@ public class AccountDTO implements Serializable {
     private String name;
     private RoleDTO roleDTO;
     private StatusDTO statusDTO;
+    private String avatar;
 
     public AccountDTO() {
     }
 
-    public AccountDTO(String email, String password, String name, RoleDTO roleDTO, StatusDTO statusDTO) {
+    public AccountDTO(String email, String password, String name, RoleDTO roleDTO, StatusDTO statusDTO,String avatar) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.roleDTO = roleDTO;
         this.statusDTO = statusDTO;
+        this.avatar = avatar;
     }
 
     /**
@@ -100,6 +102,20 @@ public class AccountDTO implements Serializable {
      */
     public void setStatusDTO(StatusDTO statusDTO) {
         this.statusDTO = statusDTO;
+    }
+
+    /**
+     * @return the avatar
+     */
+    public String getAvatar() {
+        return avatar;
+    }
+
+    /**
+     * @param avatar the avatar to set
+     */
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     

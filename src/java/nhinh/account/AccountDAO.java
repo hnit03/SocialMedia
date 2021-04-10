@@ -73,7 +73,7 @@ public class AccountDAO implements Serializable {
         try {
             con = DBHelper.makeConnection();
             if (con != null) {
-                String sql = "select password,fullname,roleID,statusID "
+                String sql = "select password,fullname,roleID,statusID,avatar "
                         + "from Account "
                         + "where email = ? ";
                 ps = con.prepareStatement(sql);
@@ -86,7 +86,8 @@ public class AccountDAO implements Serializable {
                     String statusID = rs.getString("statusID");
                     StatusDTO sdto = sdao.getStatusDTO(statusID);
                     String fullname = rs.getString("fullname");
-                    dTO = new AccountDTO(email, pass, fullname, rdto, sdto);
+                    String avatar = rs.getString("avatar");
+                    dTO = new AccountDTO(email, pass, fullname, rdto, sdto,avatar);
                 }
             }
         } finally {
@@ -99,14 +100,15 @@ public class AccountDAO implements Serializable {
         try {
             con = DBHelper.makeConnection();
             if (con != null) {
-                String sql = "insert into Account(email,password,roleID,fullname,statusID) "
-                        + "values(?,?,?,?,?)";
+                String sql = "insert into Account(email,password,roleID,fullname,statusID,avatar) "
+                        + "values(?,?,?,?,?,?)";
                 ps = con.prepareStatement(sql);
                 ps.setString(1, dto.getEmail());
                 ps.setString(2, dto.getPassword());
                 ps.setString(3, dto.getRoleDTO().getRoleID());
                 ps.setString(4, dto.getName());
                 ps.setString(5, dto.getStatusDTO().getStatusID());
+                ps.setString(6, dto.getAvatar());
                 int success = ps.executeUpdate();
                 if (success == 1) {
                     return true;

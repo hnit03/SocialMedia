@@ -82,7 +82,7 @@ public class RegisterServlet extends HttpServlet {
                     RoleDTO rdto = rdao.getRoleMember();
                     StatusDAO sdao = new StatusDAO();
                     StatusDTO sdto = sdao.getStatusVerify();
-                    AccountDTO dto = new AccountDTO(email, pass, fullname, rdto, sdto);
+                    AccountDTO dto = new AccountDTO(email, pass, fullname, rdto, sdto,"");
                     VerifyGmail vg = new VerifyGmail();
                     String code = vg.sendEmail(email);
 

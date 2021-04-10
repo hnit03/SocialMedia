@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <body>
     <div class="topbar stick">
         <div class="logo">
@@ -27,9 +27,13 @@
                     </a>
                 </li>
             </ul>
-            <div class="user-img">
-                <img src="images/resources/admin.jpg" alt=""> Hoàng Nhi
-            </div>
+            <c:set var="account" value="${sessionScope.ACCOUNT}"/>
+            <c:if test="${not empty account}">
+                <div class="user-img">
+                    <img src="images/resources/${account.avatar}" alt="" style="width: 3rem"> ${account.name}
+                </div>  
+            </c:if>
+
             <span class="ti-menu main-menu" data-ripple=""></span>
         </div>
     </div>

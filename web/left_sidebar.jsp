@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <body>
     <div class="responsive-header">
         <div class="mh-head first Sticky">
@@ -60,9 +61,12 @@
         <div class="menu-left">
             <ul class="left-menu">
                 <li>
-                    <figure>
-                        <img src="images/resources/side-friend3.jpg" alt="" style="border-radius: 100%"> Hoàng Nhi
-                    </figure>
+                    <c:set var="account" value="${sessionScope.ACCOUNT}"/>
+                    <c:if test="${not empty account}">
+                        <figure>
+                            <img src="images/resources/${account.avatar}" alt="" style="border-radius: 100%;width: 3rem"> ${account.name}
+                        </figure> 
+                    </c:if>
                 </li>
                 <li>
                     <a href="#" title="Newsfeed Page" data-toggle="tooltip" data-placement="right">
