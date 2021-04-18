@@ -1,12 +1,12 @@
 # SocialMedia
 
-##Background
+## Background
 You want to build a mini social network. Basic functions such as account registration, login, post articles, comment on the articles.
 
-##Program Specifications
+## Program Specifications
 In this assignment, you are requested to build a mini social network. You must use Filter as Controller and follow MVC2 model.
 
-##Features:
+## Features:
 This system contains the following functions:
 - Function 1: Register a new account - 50 LOC  
 o A new account is registration following information such as email, name, password, role, status (email as ID).  
