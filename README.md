@@ -8,7 +8,7 @@ In this assignment, you are requested to build a mini social network. You must u
 
 ##Features:
 This system contains the following functions:
-- Function 1: Register a new account - 50 LOC
+- Function 1: Register a new account - 50 LOC  
 o A new account is registration following information such as email, name, password, role, status (email as ID).
 o The default role of new account is member.
 o The default status of new account is New.
